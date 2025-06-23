@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Add Service{% endblock title %}
+
+{% block main-content %}
+<style>
+    .container {
+        padding: 20px;
+        height: 100%;
+    }
+
+    .heading {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2rem;
+        color: black;
+    }
+
+    .form1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+
+    .btn-custom {
+        padding: 8px 16px;
+        margin: 5px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+    }
+</style>
+
+    <section class="container">
+        <h3 class='heading'>Add Customer Service</h3>
+
+        <form class='form1' method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class='btn-custom' type="submit" value="Save">
+            <a href="{% url 'next2' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </section>
+{% endblock main-content %}

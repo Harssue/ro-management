@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Choose{% endblock title %}
+
+{% block main-content %}
+<style>
+    .container {
+        padding: 20px;
+        height: 100%;
+    }
+
+    .heading {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2rem;
+        color: black;
+    }
+
+    .form1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+
+    .btn-custom {
+        padding: 8px 16px;
+        margin: 5px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    {% comment %} .btn-group {
+        margin-bottom: 20px;
+        text-align: center;
+    } {% endcomment %}
+
+    .para{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+    <section class="container">
+        <h3 class="heading">Choose an Option</h3>
+        <div class="d-flex justify-content-center g-3">
+            <a href="{% url 'next2' %}" class="btn-custom">Spare Parts</a>
+            <a href="{% url 'cust_data' %}" class="btn-custom">Customer Details</a>
+        </div>
+    </section>
+{% endblock main-content %}
