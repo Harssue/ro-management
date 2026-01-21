@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Choose{% endblock title %}
+
+{% block main-content %}
+
+
+<div class="center-container">
+    <div class="glass-panel text-center">
+        <h3 class="mb-4">Dashboard</h3>
+        <a href="{% url 'operations_menu' %}" class="btn-custom m-2">Spare Parts & Operations</a>
+        <a href="{% url 'customer_list' %}" class="btn-custom m-2">Customer Details</a>
+    </div>
+</div>
+{% endblock main-content %}

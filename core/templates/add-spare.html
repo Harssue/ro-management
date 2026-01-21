@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Add Spare{% endblock title %}
+
+{% block main-content %}
+
+
+<div class="center-container">
+    <div class="glass-panel" style="max-width: 500px; width: 100%;">
+        <h3 class="text-center mb-4">Add Spare Part</h3>
+        <form class='form1 d-grid gap-3' method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class='btn btn-primary'>Save Part</button>
+            <a href="{% url 'operations_menu' %}" class="btn btn-outline-dark">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock main-content %}

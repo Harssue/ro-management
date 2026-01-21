@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <title>{% block title %} {% endblock title %}</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'dashboard' %}">Service Manager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="{% url 'customer_list' %}">Customers</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="{% url 'inventory_list' %}">Inventory</a>
+                </li>
+            </ul>
+           <a href="{% url 'logout_view' %}" class="btn btn-outline-danger ms-3">Logout</a>
+        </div>
+      </div>
+  </nav>
+  <div class="container main-content mt-4">
+  {% block main-content %}{% endblock main-content %}
+  </div>
+  <footer>
+        <div class="container">
+            <span class="text-muted">© 2026 RO Service Manager</span>
+        </div>
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Spares{% endblock title %}
+
+{% block main-content %}
+
+    <section class="center-container">
+        <div class="glass-panel text-center">
+            <h3 class="mb-4">Operations</h3>
+            <div class="d-flex flex-wrap justify-content-center g-3">
+                <a href="{% url 'add_spare_part' %}" class="btn-custom m-2">Add Spare</a>
+                <a href="{% url 'add_service' %}" class="btn-custom m-2">Record Service</a>
+                <a href="{% url 'inventory_list' %}" class="btn-custom m-2">Inventory List</a>
+                <a href="{% url 'dashboard' %}" class="btn btn-secondary rounded-pill px-4 py-2 m-2">Back</a>
+            </div>
+        </div>
+    </section
+{% endblock main-content %}

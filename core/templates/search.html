@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Search{% endblock title %}
+
+{% block main-content %}
+
+
+    <section class="container center-container">
+        <div class="card p-4 shadow w-100" style="max-width: 600px;">
+            <h3 class='text-center mb-4 text-primary'>Search Customer</h3>
+            <form class='d-flex gap-2 mb-4' method="get">
+                <input class="form-control" type="text" name="id" placeholder = 'Enter Customer ID'>
+                <button class='btn btn-primary' type="submit">Search</button>
+                <a href="{% url 'customer_list' %}" class="btn btn-secondary">Cancel</a>
+            </form>
+            {% if customer %}
+                <div class="card bg-light p-3">
+                    <h4 class='text-center mb-3'>Customer Details</h4>
+                    <p><strong>Name:</strong> {{customer.name}}</p>
+                    <p><strong>Address:</strong> {{customer.address}}</p>
+                    <p><strong>Phone:</strong> {{customer.phone}}</p>
+                    <p><strong>Installation Date:</strong> {{customer.installation_date}}</p>
+
+                    <h5 class="mt-3">Service History</h5>
+                    <ul class="list-group">
+                        {% for service in customer.service_history.all %}
+                            <li class="list-group-item">{{ service.service_date }} - {{ service.parts_used }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+{% endblock main-content %}
